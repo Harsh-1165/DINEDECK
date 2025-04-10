@@ -1,1 +1,1 @@
-# DINECECK
+# DINEDECK
