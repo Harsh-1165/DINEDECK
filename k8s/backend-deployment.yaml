@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pos-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pos-backend
+  template:
+    metadata:
+      labels:
+        app: pos-backend
+    spec:
+      containers:
+      - name: pos-backend
+        image: pos-backend:latest
+        ports:
+        - containerPort: 8000
+        envFrom:
+        - configMapRef:
+            name: backend-config
+        - secretRef:
+            name: backend-secrets 

@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: backend-config
+  labels:
+    app: pos-backend
+data:
+  MONGODB_URI: mongodb+srv://harshmaniya64:Harsh1165@dinedeck.8ctgfwt.mongodb.net
+  DB_NAME: Dinedeck
+  CORS_ORIGIN: http://localhost:5173
+  CLOUDINARY_CLOUD_NAME: dl3qcrq6e
+  CLOUDINARY_API_KEY: 418989355511713
+  CLOUDINARY_API_SECRET: AzHj4PlTR21hmiY2wXzCEHi-9l8

@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pos-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pos-frontend
+  template:
+    metadata:
+      labels:
+        app: pos-frontend
+    spec:
+      containers:
+      - name: pos-frontend
+        image: pos-frontend:latest
+        ports:
+        - containerPort: 5173
+        envFrom:
+        - configMapRef:
+            name: frontend-config 
